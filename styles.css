@@ -1,5 +1,3 @@
-/* home */
-
 .header {
   text-align: none;
   padding: 30px;
@@ -9,8 +7,19 @@
 }
 
 /* navigation links */
+
+@keyframes loadtext {
+  0%{ opacity: 0; }
+  100%{ opacity: 1; }
+}
+
 a{
+  transition: 0.5;
   font-size: 20px;
+  opacity: 1;
+  animation: loadtext;
+  animation-duration: 0.5s;
+  animation-delay: 0s;
 }
 a:link {
   transition:0.5s;
