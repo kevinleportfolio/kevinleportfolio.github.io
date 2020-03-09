@@ -7,3 +7,15 @@
   color: white;
   font-size: 30px;
 }
+
+a:link {
+  color: white;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+a:active {
+  color: blue;
+}
