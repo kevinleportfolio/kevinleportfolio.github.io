@@ -10,6 +10,9 @@
 <script>
 
 function myFunction() {
+  document.getElementById("thisbox").focus();
+  document.getElementById("thisbox").select();
+  
   var check = document.getElementById("about");
   check.style.display = "none";
   if(document.getElementById("thisbox").value == "python about.p"){
@@ -29,15 +32,14 @@ function myFunction() {
   <ac><a href="https://kevinleportfolio.github.io/about.html">//about</a></ac>
   <ad><a href="https://kevinleportfolio.github.io/projects.html">//projects</a></ad>
   <ae><a href="https://kevinleportfolio.github.io/etc.html">//etc</a></ae><br><br>
-      
+</div>
 
-  </div>
-  <h1><div class="af">who am i?</div></h1>
-<input type="text" id="thisbox" placeholder="type 'python about.py'" onkeypress="myFunction()">
+<h1><div class="af">who am i?</div></h1>
+<input type="text" id="thisbox" placeholder=" type 'python about.py'" onkeypress="myFunction()" autofocus=""/>
 <br><br>
-<af><div id="about">
-  This is my DIV element.
-</div></af>
+<div id="about">
+  input text here.
+</div>
 
 </body>
 </center>
