@@ -1,26 +1,35 @@
 /* home */
 
 .header {
-  text-align: center;
-  padding: 60px;
+  text-align: none;
+  padding: 30px;
   background: #4d4c4c;
   color: white;
   font-size: 30px;
 }
 
 /* navigation links */
+a{
+  font-size: 20px;
+}
 a:link {
+  transition:0.5s;
   color: white;
   text-decoration: none;
 }
 
+a:visited {
+  color: white;
+}
+
 a:hover {
-  transition:1s;
+  transition:0.5s;
   color: black;
   text-decoration: none;
 }
 
 a:active {
+  transition:0s;
   color: blue;
   text-decoration: none;
 }
