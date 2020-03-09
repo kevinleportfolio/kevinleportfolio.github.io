@@ -82,13 +82,15 @@ h1 .af {
   white-space: nowrap; 
   margin: 0 auto; 
   letter-spacing: .15em; 
-  animation: 
-    typing 5s steps(40, end); }
+  animation: typing 3s steps(40, end); }
 
 @keyframes typing {
   from { width: 0% }
   to { width: 100% }
 }
 
+/*textbox*/
 
-
+textarea:focus, input:focus{
+    outline: none;
+}
