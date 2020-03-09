@@ -83,7 +83,7 @@ h1 .af {
   margin: 0 auto; 
   letter-spacing: .15em; 
   animation: 
-    typing 3s steps(40, end); }
+    typing 5s steps(40, end); }
 
 @keyframes typing {
   from { width: 0% }
