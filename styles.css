@@ -1,39 +1,39 @@
-.header {
-  text-align: none;
-  padding: 30px;
-  background: #4d4c4c;
-  color: white;
-  font-size: 30px;
-}
-
-/* navigation links */
-
 @keyframes loadtext {
   0%{ opacity: 0; }
   100%{ opacity: 1; }
 }
 
+.header {
+  text-align: none;
+  padding: 30px;
+  background: white;
+  color: black;
+  font-size: 30px;
+  animation: loadtext;
+  animation-duration: 1s;
+  animation-delay: 0s;
+}
+
+/* navigation links */
+
 a{
   transition: 0.5;
   font-size: 20px;
-  opacity: 1;
-  animation: loadtext;
-  animation-duration: 0.5s;
-  animation-delay: 0s;
 }
+
 a:link {
   transition:0.5s;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
 a:visited {
-  color: white;
+  color: black;
 }
 
 a:hover {
   transition:0.5s;
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -41,4 +41,32 @@ a:active {
   transition:0s;
   color: blue;
   text-decoration: none;
+}
+
+ab{
+  opacity: 1;
+  animation: loadtext;
+  animation-duration: 1s;
+  animation-delay: 0s;
+}
+
+ac{
+  opacity: 1;
+  animation: loadtext;
+  animation-duration: 2s;
+  animation-delay: 0s;
+}
+
+ad{
+  opacity: 1;
+  animation: loadtext;
+  animation-duration: 3s;
+  animation-delay: 0s;
+}
+
+ae{
+  opacity: 1;
+  animation: loadtext;
+  animation-duration: 4s;
+  animation-delay: 0s;
 }
