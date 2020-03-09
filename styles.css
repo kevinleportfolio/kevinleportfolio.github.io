@@ -14,7 +14,8 @@ a:link {
 }
 
 a:hover {
-  color: hotpink;
+  transition:1s;
+  color: black;
   text-decoration: none;
 }
 
