@@ -7,6 +7,18 @@
 
 </head>
 
+<script>
+
+function myFunction() {
+  var check = document.getElementById("about");
+  check.style.display = "none";
+  if(document.getElementById("thisbox").value == "python about.p"){
+       check.style.display = "block";
+  }
+  
+}</script>
+
+<body onload="myFunction()">
 
 <div class="header">
   <h1>Kevin Le</h1>
@@ -21,9 +33,12 @@
 
   </div>
   <h1><div class="af">who am i?</div></h1>
-<input type="text" class="rq-form-element" onkeypress="myFunction()"/>
-<i></i>
+<input type="text" id="thisbox" placeholder="type 'python about.py'" onkeypress="myFunction()">
+<br><br>
+<af><div id="about">
+  This is my DIV element.
+</div></af>
 
-
+</body>
 </center>
 </html>
