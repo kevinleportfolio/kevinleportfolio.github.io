@@ -6,6 +6,7 @@
 .header {
   text-align: none;
   color: black;
+  padding: 30px;
   font-size: 30px;
   animation: loadtext;
   animation-duration: 1s;
