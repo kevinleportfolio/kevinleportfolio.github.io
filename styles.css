@@ -94,3 +94,7 @@ h1 .af {
 textarea:focus, input:focus{
     outline: none;
 }
+
+input { 
+    text-align: center; 
+}
