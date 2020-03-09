@@ -8,9 +8,6 @@
   color: black;
   padding: 30px;
   font-size: 30px;
-  animation: loadtext;
-  animation-duration: 1s;
-  animation-delay: 0s;
 }
 
 /* navigation links */
