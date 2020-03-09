@@ -96,5 +96,6 @@ textarea:focus, input:focus{
 }
 
 input { 
+    opacity: 0.5;
     text-align: right; 
 }
