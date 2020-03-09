@@ -34,8 +34,7 @@ a:hover {
 }
 
 a:active {
-  transition:0s;
-  color: blue;
+  color: white;
   text-decoration: none;
 }
 
