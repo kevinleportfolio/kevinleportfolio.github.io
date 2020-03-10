@@ -10,17 +10,21 @@
 
 <script>
 
-function onLoad() {
+function onLoad() {  
   document.getElementById("thisbox").focus();
   document.getElementById("thisbox").select();
-  
   var check = document.getElementById("about");
   check.style.display = "none";
 }
 function myFunction() {  
   var check = document.getElementById("about");
   if(document.getElementById("thisbox").value == "python about.p"){
+       var body = document.body,
+       html = document.documentElement;
+       var height = Math.max(body.scrollHeight, body.offsetHeight,
+       html.clientHeight, html.scrollHeight, html.offsetHeight);
        check.style.display = "block";
+       window.scrollBy(0, height/4);
   }
   
 }</script>
@@ -28,7 +32,7 @@ function myFunction() {
 <body onload="onLoad()">
 
 <div class="header">
-  <h1>Kevin Le</h1>
+<section id="1"><h1>Kevin Le</h1></section>
   <ab>Soft</ab><ac>ware En</ac><ad>gineer</ad><br>
   <ab>- - - - -<ac> - - - - -</ac><ad> - - - - -</ad>
   <br>
