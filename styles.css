@@ -97,7 +97,7 @@ about{
 }
 
 as .af {
-  font-family: "Lucida Sans Typewriter", "Lucida Console", monaco, "Bitstream Vera Sans Mono", monospace;
+  font-family: 'Roboto';
   font-size: 20px;
   overflow: hidden; 
   white-space: nowrap; 
