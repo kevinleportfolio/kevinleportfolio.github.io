@@ -49,6 +49,7 @@ a:active {
 
 ab{
   opacity: 1;
+  font-family: 'Roboto';
   animation: loadtext;
   animation-duration: 1.5s;
   animation-delay: 0s;
@@ -56,6 +57,7 @@ ab{
 
 ac{
   opacity: 1;
+  font-family: 'Roboto';
   animation: loadtext;
   animation-duration: 2s;
   animation-delay: 0s;
@@ -63,12 +65,14 @@ ac{
 
 ad{
   opacity: 1;
+  font-family: 'Roboto';
   animation: loadtext;
   animation-duration: 3s;
   animation-delay: 0s;
 }
 ae{
   opacity: 1;
+  font-family: 'Roboto';
   animation: loadtext;
   animation-duration: 4s;
   animation-delay: 0s;
