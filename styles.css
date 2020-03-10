@@ -11,6 +11,15 @@
   50%{ font-size: 20px; }
 }
 
+html{
+  display: block;
+  height: 200%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  text-align: center;
+  width: 100%;
+}
+
 .header {
   font-family: 'Roboto';
   text-align: none;
@@ -70,6 +79,7 @@ ad{
   animation-duration: 3s;
   animation-delay: 0s;
 }
+
 ae{
   opacity: 1;
   font-family: 'Roboto';
@@ -85,7 +95,6 @@ about{
   animation-duration: 4s;
   animation-delay: 0s;
 }
-
 
 as .af {
   font-size: 20px;
