@@ -12,7 +12,7 @@
 }
 
 .header {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Roboto';
   text-align: none;
   color: black;
   padding: 30px;
@@ -22,7 +22,6 @@
 /* navigation links */
 
 a{
-  font-family: Arial, Helvetica, sans-serif;
   transition: 0.5;
   font-size: 20px;
 }
@@ -69,6 +68,14 @@ ad{
   animation-delay: 0s;
 }
 ae{
+  opacity: 1;
+  animation: loadtext;
+  animation-duration: 4s;
+  animation-delay: 0s;
+}
+
+about{
+  font-family: 'Roboto';
   opacity: 1;
   animation: loadtext;
   animation-duration: 4s;
