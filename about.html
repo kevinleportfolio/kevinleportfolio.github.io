@@ -18,7 +18,7 @@ function onLoad() {
 }
 function myFunction() {  
   var check = document.getElementById("about");
-  if(document.getElementById("thisbox").value == "python about.p"){
+  if(document.getElementById("thisbox").value == "python about.p" || typeof window.orientation !== 'undefined'){
        var body = document.body,
        html = document.documentElement;
        var height = Math.max(body.scrollHeight, body.offsetHeight,
