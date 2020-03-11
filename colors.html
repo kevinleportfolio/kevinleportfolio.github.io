@@ -1,0 +1,61 @@
+<html>
+<script>
+
+function myFunction(){
+     var colors = ["","","","","","","","",""];
+     var y = 1;
+     var choiceColor = '#'+Math.random().toString(16).substr(-6);
+     var randomNum = Math.floor((Math.random()*9) + 1);
+     document.getElementById("0").style.background = choiceColor;            
+     document.getElementById('' + randomNum).style.background = choiceColor;           
+
+   
+     for (i = 0; i < colors.length; i++) {
+         if(y !== randomNum){
+            var randomColor = '#'+Math.random().toString(16).substr(-6);
+            colors[i] = randomColor;
+            var num = '' + y;
+            y++;
+            document.getElementById(num).style.background = colors[i];  
+            }
+          }
+          
+   }
+
+</script>
+<body>
+
+<button type="button" id="start" onclick="myFunction()">start</button><br>
+
+
+<button class="button" id="1" onclick="myFunction()"></button>
+<button class="button" id="2" onclick="myFunction()"></button>
+<button class="button" id="3" onclick="myFunction()"></button><br>
+<button class="button" id="4" onclick="myFunction()"></button>
+<button class="button" id="5" onclick="myFunction()"></button>
+<button class="button" id="6" onclick="myFunction()"></button><br>
+<button class="button" id="7" onclick="myFunction()"></button>
+<button class="button" id="8" onclick="myFunction()"></button>
+<button class="button" id="9" onclick="myFunction()"></button>
+<br><br><br>
+<button class="button" id="0"></button>
+
+
+
+</body>
+</html>
+
+
+
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 32px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
