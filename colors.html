@@ -1,7 +1,7 @@
 <html>
 <script>
-
 function myFunction(){
+
      var colors = ["","","","","","","","",""];
      var choiceColor = '#'+Math.random().toString(16).substr(-6);
      var randomNum = Math.floor((Math.random()*9) + 1);
@@ -11,13 +11,11 @@ function myFunction(){
    
      for (i = 0; i < colors.length; i++) {
          if(i+1 !== randomNum){
-           
             var randomColor = '#'+Math.random().toString(16).substr(-6);
             colors[i] = randomColor;
-            var y = i + 1;
+            var y = i+1;
             var num = '' + y;
             document.getElementById(num).style.background = colors[i];  
-
             }
           }
           
@@ -49,3 +47,19 @@ function myFunction(){
 
 </body>
 </html>
+
+.button {
+  background-color: black;
+  border: none;
+  border-radius: 4px;
+  padding: 32px 32px;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+
+}
+
+.button:hover {
+  background-color: white;
+}
