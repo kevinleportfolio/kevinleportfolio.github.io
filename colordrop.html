@@ -30,7 +30,7 @@ function onStart(thisid){
    }
    
 function colorCycle(thisid){
-      var current = 20;
+      var current = 36;
       var colorList = ["red","orange","yellow","green","blue"];
       var num = Math.floor(Math.random()*5);
       document.getElementById('' + current).style.background = colorList[num];
@@ -41,18 +41,18 @@ function colorCycle(thisid){
               document.getElementById('' + current).style.background = "black";
               current -= 1;
               document.getElementById('' + current).style.background = colorList[num];
-      if(current < 16){
+      if(current < 28){
                
          clearInterval(downloadTimer);
          document.getElementById('' + current).style.background = "black";
               }
-          }, 1500); 
+          }, 900); 
 }
 
 function cycles(thisid){
      var downloadTimer = setInterval(function(){
               colorCycle(thisid);
-          }, 3000); 
+          }, 1800); 
 }
 
 function setColor(thisid){
@@ -64,19 +64,19 @@ function setColor(thisid){
 function myFunction(thisid){
      var current = thisid - '';
      var temp = document.getElementById("start").style.background;
-     if(current <=5 && current > 0){
+     if(current <=9 && current > 0){
          
          document.getElementById('' + current).style.background = temp;
           var downloadTimer = setInterval(function(){
               if(document.getElementById('' + current).style.background == document.getElementById(thisid).style.background){
               document.getElementById("counter").innerHTML++;
               }
-              if(current >= 16 && current <= 20){
+              if(current >= 27 && current <= 36){
              
               clearInterval(downloadTimer);
               }
               document.getElementById('' + current).style.background = "black";
-              current += 5;
+              current += 9;
               document.getElementById('' + current).style.background = temp;
           }, 250);  
           setColor(thisid);
@@ -99,22 +99,38 @@ color drop<br><br>
 <button class="button" id="2" onclick="myFunction(this.id)"></button>
 <button class="button" id="3" onclick="myFunction(this.id)"></button>
 <button class="button" id="4" onclick="myFunction(this.id)"></button>
-<button class="button" id="5" onclick="myFunction(this.id)"></button><br>
-<button class="button" id="6"></button>
-<button class="button" id="7"></button>
-<button class="button" id="8"></button>
-<button class="button" id="9"></button>
-<button class="button" id="10"></button><br>
+<button class="button" id="5" onclick="myFunction(this.id)"></button>
+<button class="button" id="6" onclick="myFunction(this.id)"></button>
+<button class="button" id="7" onclick="myFunction(this.id)"></button>
+<button class="button" id="8" onclick="myFunction(this.id)"></button>
+<button class="button" id="9" onclick="myFunction(this.id)"></button><br>
+<button class="button" id="10"></button>
 <button class="button" id="11"></button>
 <button class="button" id="12"></button>
 <button class="button" id="13"></button>
 <button class="button" id="14"></button>
-<button class="button" id="15"></button><br>
+<button class="button" id="15"></button>
 <button class="button" id="16"></button>
 <button class="button" id="17"></button>
-<button class="button" id="18"></button>
+<button class="button" id="18"></button><br>
 <button class="button" id="19"></button>
-<button class="button" id="20"></button><br>
+<button class="button" id="20"></button>
+<button class="button" id="21"></button>
+<button class="button" id="22"></button>
+<button class="button" id="23"></button>
+<button class="button" id="24"></button>
+<button class="button" id="25"></button>
+<button class="button" id="26"></button>
+<button class="button" id="27"></button><br>
+<button class="button" id="28"></button>
+<button class="button" id="29"></button>
+<button class="button" id="30"></button>
+<button class="button" id="31"></button>
+<button class="button" id="32"></button>
+<button class="button" id="33"></button>
+<button class="button" id="34"></button>
+<button class="button" id="35"></button>
+<button class="button" id="36"></button>
 <br>
 </div> 
 
