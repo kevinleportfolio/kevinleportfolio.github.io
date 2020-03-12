@@ -1,35 +1,50 @@
 <html>
-<head>
-  <link rel="stylesheet" href="colors.css">
-</head>
+<center>
 <script>
 
 function onStart(){
-     var colors = ["","","","","","","","",""];
-     var choiceColor = '#'+Math.random().toString(16).substr(-6);
-     var randomNum = Math.floor((Math.random()*9) + 1);
-     document.getElementById("0").style.background = choiceColor;            
-     document.getElementById('' + randomNum).style.background = choiceColor;           
-
-   
-     for (i = 0; i < colors.length; i++) {
-         if(i+1 !== randomNum){
-            var randomColor = '#'+Math.random().toString(16).substr(-6);
-            colors[i] = randomColor;
-            var y = i+1;
-            var num = '' + y;
-            document.getElementById(num).style.background = colors[i];  
+     if(document.getElementById("counter").innerHTML == ""){
+          var x = document.getElementById("buttons");
+          var timeleft = 30;
+          var downloadTimer = setInterval(function(){
+            if(timeleft <= 0){
+              clearInterval(downloadTimer);
+              document.getElementById("counter").innerHTML+= " matches";
+              document.getElementById("timer").innerHTML = "";
+              x.style.display = "none";
+            } else {
+              document.getElementById("timer").innerHTML = timeleft;
             }
-        }          
+            timeleft -= 1;
+          }, 1000);
+
+         document.getElementById("counter").innerHTML = 0;  
+         var colors = ["","","","","","","","",""];
+         var choiceColor = '#'+Math.random().toString(16).substr(-6);
+         var randomNum = Math.floor((Math.random()*9) + 1);
+         document.getElementById("start").style.background = choiceColor;            
+         document.getElementById('' + randomNum).style.background = choiceColor;           
+         for (i = 0; i < colors.length; i++) {
+             if(i+1 !== randomNum){
+                var randomColor = '#'+Math.random().toString(16).substr(-6);
+                colors[i] = randomColor;
+                var y = i+1;
+                var num = '' + y;
+                document.getElementById(num).style.background = colors[i];  
+                }
+            }   
+
+         }
+     
    }
 function myFunction(thisid){
-    if(document.getElementById("0").style.background == document.getElementById(thisid).style.background){
+    if(document.getElementById("start").style.background == document.getElementById(thisid).style.background && document.getElementById("counter").innerHTML !== ""){
+     document.getElementById("counter").innerHTML++;  
      var colors = ["","","","","","","","",""];
      var choiceColor = '#'+Math.random().toString(16).substr(-6);
      var randomNum = Math.floor((Math.random()*9) + 1);
-     document.getElementById("0").style.background = choiceColor;            
-     document.getElementById('' + randomNum).style.background = choiceColor;           
-
+     document.getElementById("start").style.background = choiceColor;            
+     document.getElementById('' + randomNum).style.background = choiceColor;         
    
      for (i = 0; i < colors.length; i++) {
          if(i+1 !== randomNum){
@@ -37,20 +52,22 @@ function myFunction(thisid){
             colors[i] = randomColor;
             var y = i+1;
             var num = '' + y;
-            document.getElementById(num).style.background = colors[i];  
+            document.getElementById(num).style.background = colors[i]; 
             }
-          }
-          
-       }
-          
+          }          
+       }         
    }
 
 </script>
 <body>
+<h1>
+color clicker<br><br>
+<div id="timer">&nbsp;</div>
+</h1>
 
-<button type="button" id="start" onclick="onStart()">start</button><br>
+<div id="buttons">
 
-
+<button class="button1" id="start" onclick="onStart()"></button><br><br>
 <button class="button" id="1" onclick="myFunction(this.id)"></button>
 <button class="button" id="2" onclick="myFunction(this.id)"></button>
 <button class="button" id="3" onclick="myFunction(this.id)"></button><br>
@@ -60,12 +77,11 @@ function myFunction(thisid){
 <button class="button" id="7" onclick="myFunction(this.id)"></button>
 <button class="button" id="8" onclick="myFunction(this.id)"></button>
 <button class="button" id="9" onclick="myFunction(this.id)"></button>
-<br><br><br>
-<button class="button" id="0"></button>
+<br><br>
+</div>
 
-
-
-
+<div id="counter"></div>
 
 </body>
+</center>
 </html>
