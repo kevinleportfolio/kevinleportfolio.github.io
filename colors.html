@@ -1,15 +1,14 @@
 <html>
 <center>
 <head>
-     <title>colorDrop</title>
-<link rel="stylesheet" href="colordrop.css">
+     <title>colorClicker</title>
+<link rel="stylesheet" href="colors.css">
 </head>
      
 <script>
 
-function onStart(thisid){
-     document.getElementById("counter").innerHTML = 0;
-     if(document.getElementById("counter").innerHTML == 0){
+function onStart(){
+     if(document.getElementById("counter").innerHTML == ""){
           var x = document.getElementById("buttons");
           var timeleft = 30;
           var downloadTimer = setInterval(function(){
@@ -22,120 +21,71 @@ function onStart(thisid){
               document.getElementById("timer").innerHTML = timeleft;
             }
             timeleft -= 1;
-          }, 1000); 
-                     
-        
-       }      
-   
-   }
-   
-function colorCycle(thisid){
-      var current = 36;
-      var colorList = ["red","orange","yellow","green","blue"];
-      var num = Math.floor(Math.random()*5);
-      document.getElementById('' + current).style.background = colorList[num];
-      
-      var downloadTimer = setInterval(function(){
-      
+          }, 1000);
+
+         document.getElementById("counter").innerHTML = 0;  
+         var colors = ["","","","","","","","",""];
+         var choiceColor = '#'+Math.random().toString(16).substr(-6);
+         var randomNum = Math.floor((Math.random()*9) + 1);
+         document.getElementById("start").style.background = choiceColor;            
+         document.getElementById('' + randomNum).style.background = choiceColor;           
+         for (i = 0; i < colors.length; i++) {
+             if(i+1 !== randomNum){
+                var randomColor = '#'+Math.random().toString(16).substr(-6);
+                colors[i] = randomColor;
+                var y = i+1;
+                var num = '' + y;
+                document.getElementById(num).style.background = colors[i];  
+                }
+            }   
+
+         }
      
-              document.getElementById('' + current).style.background = "black";
-              current -= 1;
-              document.getElementById('' + current).style.background = colorList[num];
-      if(current < 28){
-               
-         clearInterval(downloadTimer);
-         document.getElementById('' + current).style.background = "black";
-              }
-          }, 900); 
-}
-
-function cycles(thisid){
-     var downloadTimer = setInterval(function(){
-              colorCycle(thisid);
-          }, 1800); 
-}
-
-function setColor(thisid){
-     var colorList = ["red","orange","yellow","green","blue"];
-     var num = Math.floor(Math.random()*5);
-     document.getElementById("start").style.background = colorList[num];
-}
-
+   }
 function myFunction(thisid){
-     var current = thisid - '';
-     var temp = document.getElementById("start").style.background;
-     if(current <=9 && current > 0){
-         
-         document.getElementById('' + current).style.background = temp;
-          var downloadTimer = setInterval(function(){
-              if(document.getElementById('' + current).style.background == document.getElementById(thisid).style.background){
-              document.getElementById("counter").innerHTML++;
-              }
-              if(current >= 27 && current <= 36){
-             
-              clearInterval(downloadTimer);
-              }
-              document.getElementById('' + current).style.background = "black";
-              current += 9;
-              document.getElementById('' + current).style.background = temp;
-          }, 250);  
-          setColor(thisid);
-       }
-       
-   } 
+    if(document.getElementById("start").style.background == document.getElementById(thisid).style.background && document.getElementById("counter").innerHTML !== ""){
+     document.getElementById("counter").innerHTML++;  
+     var colors = ["","","","","","","","",""];
+     var choiceColor = '#'+Math.random().toString(16).substr(-6);
+     var randomNum = Math.floor((Math.random()*9) + 1);
+     document.getElementById("start").style.background = choiceColor;            
+     document.getElementById('' + randomNum).style.background = choiceColor;         
+   
+     for (i = 0; i < colors.length; i++) {
+         if(i+1 !== randomNum){
+            var randomColor = '#'+Math.random().toString(16).substr(-6);
+            colors[i] = randomColor;
+            var y = i+1;
+            var num = '' + y;
+            document.getElementById(num).style.background = colors[i]; 
+            }
+          }          
+       }         
+   }
 
 </script>
 <body>
 <h1>
-color drop<br><br>
-<div id="timer">&nbsp;</div><br>
-
+color clicker<br><br>
+<div id="timer">&nbsp;</div>
 </h1>
 
 <div id="buttons">
 
-<button class="button1" id="start" onclick="onStart(this.id),setColor(this.id), colorCycle(this.id,1500), cycles(this.id)"></button><br><br>
+<button class="button1" id="start" onclick="onStart()"></button><br><br>
 <button class="button" id="1" onclick="myFunction(this.id)"></button>
 <button class="button" id="2" onclick="myFunction(this.id)"></button>
-<button class="button" id="3" onclick="myFunction(this.id)"></button>
+<button class="button" id="3" onclick="myFunction(this.id)"></button><br>
 <button class="button" id="4" onclick="myFunction(this.id)"></button>
 <button class="button" id="5" onclick="myFunction(this.id)"></button>
-<button class="button" id="6" onclick="myFunction(this.id)"></button>
+<button class="button" id="6" onclick="myFunction(this.id)"></button><br>
 <button class="button" id="7" onclick="myFunction(this.id)"></button>
 <button class="button" id="8" onclick="myFunction(this.id)"></button>
-<button class="button" id="9" onclick="myFunction(this.id)"></button><br>
-<button class="button" id="10"></button>
-<button class="button" id="11"></button>
-<button class="button" id="12"></button>
-<button class="button" id="13"></button>
-<button class="button" id="14"></button>
-<button class="button" id="15"></button>
-<button class="button" id="16"></button>
-<button class="button" id="17"></button>
-<button class="button" id="18"></button><br>
-<button class="button" id="19"></button>
-<button class="button" id="20"></button>
-<button class="button" id="21"></button>
-<button class="button" id="22"></button>
-<button class="button" id="23"></button>
-<button class="button" id="24"></button>
-<button class="button" id="25"></button>
-<button class="button" id="26"></button>
-<button class="button" id="27"></button><br>
-<button class="button" id="28"></button>
-<button class="button" id="29"></button>
-<button class="button" id="30"></button>
-<button class="button" id="31"></button>
-<button class="button" id="32"></button>
-<button class="button" id="33"></button>
-<button class="button" id="34"></button>
-<button class="button" id="35"></button>
-<button class="button" id="36"></button>
-<br>
+<button class="button" id="9" onclick="myFunction(this.id)"></button>
+<br><br>
 </div> 
 
-<p id="counter"></p>
-
+<div id="counter"></div>
 
 </body>
 </center>
