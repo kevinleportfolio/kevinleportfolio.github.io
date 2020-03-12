@@ -1,7 +1,26 @@
 <html>
 <script>
-function myFunction(){
 
+function onStart(){
+     var colors = ["","","","","","","","",""];
+     var choiceColor = '#'+Math.random().toString(16).substr(-6);
+     var randomNum = Math.floor((Math.random()*9) + 1);
+     document.getElementById("0").style.background = choiceColor;            
+     document.getElementById('' + randomNum).style.background = choiceColor;           
+
+   
+     for (i = 0; i < colors.length; i++) {
+         if(i+1 !== randomNum){
+            var randomColor = '#'+Math.random().toString(16).substr(-6);
+            colors[i] = randomColor;
+            var y = i+1;
+            var num = '' + y;
+            document.getElementById(num).style.background = colors[i];  
+            }
+        }          
+   }
+function myFunction(thisid){
+    if(document.getElementById("0").style.background == document.getElementById(thisid).style.background){
      var colors = ["","","","","","","","",""];
      var choiceColor = '#'+Math.random().toString(16).substr(-6);
      var randomNum = Math.floor((Math.random()*9) + 1);
@@ -19,72 +38,31 @@ function myFunction(){
             }
           }
           
+       }
+          
    }
 
 </script>
 <body>
 
-<button type="button" id="start" onclick="myFunction()">start</button><br>
+<button type="button" id="start" onclick="onStart()">start</button><br>
 
 
-<button class="button" id="1" onclick="myFunction()"></button>
-<button class="button" id="2" onclick="myFunction()"></button>
-<button class="button" id="3" onclick="myFunction()"></button><br>
-<button class="button" id="4" onclick="myFunction()"></button>
-<button class="button" id="5" onclick="myFunction()"></button>
-<button class="button" id="6" onclick="myFunction()"></button><br>
-<button class="button" id="7" onclick="myFunction()"></button>
-<button class="button" id="8" onclick="myFunction()"></button>
-<button class="button" id="9" onclick="myFunction()"></button>
+<button class="button" id="1" onclick="myFunction(this.id)"></button>
+<button class="button" id="2" onclick="myFunction(this.id)"></button>
+<button class="button" id="3" onclick="myFunction(this.id)"></button><br>
+<button class="button" id="4" onclick="myFunction(this.id)"></button>
+<button class="button" id="5" onclick="myFunction(this.id)"></button>
+<button class="button" id="6" onclick="myFunction(this.id)"></button><br>
+<button class="button" id="7" onclick="myFunction(this.id)"></button>
+<button class="button" id="8" onclick="myFunction(this.id)"></button>
+<button class="button" id="9" onclick="myFunction(this.id)"></button>
 <br><br><br>
 <button class="button" id="0"></button>
 
-<input type="text" id="test" placeholder="hey"/>
-<input type="text" id="test2" placeholder="hey"/>
 
 
 
 
 </body>
 </html>
-
-.button {
-  background-color: black;
-  border: none;
-  border-radius: 4px;
-  padding: 32px 32px;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  transition-duration: 0.5s;
-
-}
-
-.button {
-  background-color: black;
-  border: none;
-  border-radius: 4px;
-  padding: 32px 32px;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  transition-duration: 0.5s;
-  outline: none;
-}
-
-.button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(3px);
-  transition-duration: 0s;
-
-}
-.button:hover {
-  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.88);
-  background-color: gray;
-}
-
-
-
-
-
