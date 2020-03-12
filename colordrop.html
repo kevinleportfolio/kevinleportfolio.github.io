@@ -2,14 +2,14 @@
 <center>
 <head>
      <title>colorClicker</title>
-<link rel="stylesheet" href="colors.css">
+<link rel="stylesheet" href="colordrop.css">
 </head>
      
 <script>
 
-function onStart(){
-     
-     if(document.getElementById("counter").innerHTML == ""){
+function onStart(thisid){
+     document.getElementById("counter").innerHTML = 0;
+     if(document.getElementById("timer").innerHTML == ""){
           var x = document.getElementById("buttons");
           var timeleft = 3000;
           var downloadTimer = setInterval(function(){
@@ -22,11 +22,39 @@ function onStart(){
               document.getElementById("timer").innerHTML = timeleft;
             }
             timeleft -= 1;
-          }, 1000);        
-
-         }
+          }, 1000); 
+                     
+        
+       }      
    
    }
+   
+function colorCycle(thisid){
+      var current = 20;
+      var colorList = ["red","orange","yellow","green","blue"];
+      var num = Math.floor(Math.random()*5);
+      document.getElementById('' + current).style.background = colorList[num];
+      
+      var downloadTimer = setInterval(function(){
+      
+     
+              document.getElementById('' + current).style.background = "black";
+              current -= 1;
+              document.getElementById('' + current).style.background = colorList[num];
+      if(current < 16){
+               
+         clearInterval(downloadTimer);
+         document.getElementById('' + current).style.background = "black";
+              }
+          }, 1500); 
+}
+
+function cycles(thisid){
+     var downloadTimer = setInterval(function(){
+              colorCycle(thisid);
+          }, 3000); 
+}
+
 function setColor(thisid){
      var colorList = ["red","orange","yellow","green","blue"];
      var num = Math.floor(Math.random()*5);
@@ -40,6 +68,9 @@ function myFunction(thisid){
          
          document.getElementById('' + current).style.background = temp;
           var downloadTimer = setInterval(function(){
+              if(document.getElementById('' + current).style.background == document.getElementById(thisid).style.background){
+              document.getElementById("counter").innerHTML++;
+              }
               if(current >= 16 && current <= 20){
              
               clearInterval(downloadTimer);
@@ -47,7 +78,7 @@ function myFunction(thisid){
               document.getElementById('' + current).style.background = "black";
               current += 5;
               document.getElementById('' + current).style.background = temp;
-          }, 350);  
+          }, 250);  
           setColor(thisid);
        }
        
@@ -63,7 +94,7 @@ color drop<br><br>
 
 <div id="buttons">
 
-<button class="button1" id="start" onclick="onStart(),setColor(this.id)"></button><br><br>
+<button class="button1" id="start" onclick="onStart(this.id),setColor(this.id), colorCycle(this.id,1500), cycles(this.id)"></button><br><br>
 <button class="button" id="1" onclick="myFunction(this.id)"></button>
 <button class="button" id="2" onclick="myFunction(this.id)"></button>
 <button class="button" id="3" onclick="myFunction(this.id)"></button>
@@ -87,7 +118,7 @@ color drop<br><br>
 <br><br>
 </div> 
 
-<p id="counter"></p>
+<p id="counter">222</p>
 
 
 </body>
