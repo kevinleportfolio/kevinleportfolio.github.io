@@ -3,7 +3,6 @@
 
 function myFunction(){
      var colors = ["","","","","","","","",""];
-     var y = 1;
      var choiceColor = '#'+Math.random().toString(16).substr(-6);
      var randomNum = Math.floor((Math.random()*9) + 1);
      document.getElementById("0").style.background = choiceColor;            
@@ -11,12 +10,14 @@ function myFunction(){
 
    
      for (i = 0; i < colors.length; i++) {
-         if(y !== randomNum){
+         if(i+1 !== randomNum){
+           
             var randomColor = '#'+Math.random().toString(16).substr(-6);
             colors[i] = randomColor;
+            var y = i + 1;
             var num = '' + y;
-            y++;
             document.getElementById(num).style.background = colors[i];  
+
             }
           }
           
@@ -40,22 +41,11 @@ function myFunction(){
 <br><br><br>
 <button class="button" id="0"></button>
 
+<input type="text" id="test" placeholder="hey"/>
+<input type="text" id="test2" placeholder="hey"/>
+
+
 
 
 </body>
 </html>
-
-
-
-.button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 32px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
