@@ -9,9 +9,9 @@
 
 function onStart(thisid){
      document.getElementById("counter").innerHTML = 0;
-     if(document.getElementById("timer").innerHTML == ""){
+     if(document.getElementById("counter").innerHTML == 0){
           var x = document.getElementById("buttons");
-          var timeleft = 3000;
+          var timeleft = 30;
           var downloadTimer = setInterval(function(){
             if(timeleft <= 0){
               clearInterval(downloadTimer);
@@ -115,10 +115,10 @@ color drop<br><br>
 <button class="button" id="18"></button>
 <button class="button" id="19"></button>
 <button class="button" id="20"></button><br>
-<br><br>
+<br>
 </div> 
 
-<p id="counter">222</p>
+<p id="counter"></p>
 
 
 </body>
