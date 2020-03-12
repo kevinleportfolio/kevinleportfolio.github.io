@@ -1,0 +1,76 @@
+<html>
+<center>
+<head>
+     <title>colorClicker</title>
+<link rel="stylesheet" href="colors.css">
+</head>
+     
+<script>
+
+function onStart(){
+     var current = 1;
+     var next;
+     
+     if(document.getElementById("counter").innerHTML == ""){
+         document.getElementById('' + current).style.background = "white";
+         document.getElementById("1").click();
+          var x = document.getElementById("buttons");
+          var timeleft = 30;
+          var downloadTimer = setInterval(function(){
+            if(timeleft <= 0){
+              clearInterval(downloadTimer);
+              document.getElementById("counter").innerHTML+= " matches";
+              document.getElementById("timer").innerHTML = "";
+              x.style.display = "none";
+            } else {
+              document.getElementById('' + current).style.background = "black";
+              current += 3;
+              document.getElementById('' + current).click();
+              document.getElementById('' + current).style.background = "white";
+              document.getElementById("timer").innerHTML = timeleft;
+            }
+            timeleft -= 1;
+          }, 1000);        
+
+         }
+   
+   }
+function myFunction(thisid){
+     var x = thisid.which || thisid.keyCode;
+    document.getElementById("demo").innerHTML =  x;
+         if(thisid.keyCode == 100){
+            document.getElementById('' + thisid).style.background = "black";
+           
+         }
+   } 
+
+</script>
+<body>
+<h1>
+color clicker<br><br>
+<div id="timer">&nbsp;</div><br>
+<p id="demo">heya</p>
+
+</h1>
+
+<div id="buttons">
+
+<button class="button1" id="start" onclick="onStart()"></button><br><br>
+<button class="button" id="1" onkeypress="myFunction(this.id)"></button>
+<button class="button" id="2" onkeypress="myFunction(this.id)"></button>
+<button class="button" id="3" onkeypress="myFunction(this.id)"></button><br>
+<button class="button" id="4" onkeypress="myFunction(this.id)"></button>
+<button class="button" id="5" onkeypress="myFunction(this.id)"></button>
+<button class="button" id="6" onkeypress="myFunction(this.id)"></button><br>
+<button class="button" id="7" onkeypress="myFunction(this.id)"></button>
+<button class="button" id="8" onkeypress="myFunction(this.id)"></button>
+<button class="button" id="9" onkeypress="myFunction(this.id)"></button>
+<br><br>
+</div> 
+
+<p id="counter"></p>
+
+
+</body>
+</center>
+</html>
