@@ -13,7 +13,6 @@ function onStart(){
      
      if(document.getElementById("counter").innerHTML == ""){
          document.getElementById('' + current).style.background = "white";
-         document.getElementById("1").click();
           var x = document.getElementById("buttons");
           var timeleft = 30;
           var downloadTimer = setInterval(function(){
@@ -24,7 +23,7 @@ function onStart(){
               x.style.display = "none";
             } else {
               document.getElementById('' + current).style.background = "black";
-              current += 3;
+              current += 4;
               document.getElementById('' + current).click();
               document.getElementById('' + current).style.background = "white";
               document.getElementById("timer").innerHTML = timeleft;
@@ -36,12 +35,21 @@ function onStart(){
    
    }
 function myFunction(thisid){
-     var x = thisid.which || thisid.keyCode;
-    document.getElementById("demo").innerHTML =  x;
-         if(thisid.keyCode == 100){
-            document.getElementById('' + thisid).style.background = "black";
-           
-         }
+     var current = thisid - '';
+     var next;
+     if(current <=4 && current > 0){
+         document.getElementById('' + current).style.background = "white";
+          var downloadTimer = setInterval(function(){
+      
+              document.getElementById('' + current).style.background = "black";
+              current += 4;
+              document.getElementById('' + current).click();
+              document.getElementById('' + current).style.background = "white";
+              document.getElementById("timer").innerHTML = timeleft;
+            
+          }, 500);        
+       }
+         
    } 
 
 </script>
@@ -49,22 +57,28 @@ function myFunction(thisid){
 <h1>
 color clicker<br><br>
 <div id="timer">&nbsp;</div><br>
-<p id="demo">heya</p>
 
 </h1>
 
 <div id="buttons">
 
 <button class="button1" id="start" onclick="onStart()"></button><br><br>
-<button class="button" id="1" onkeypress="myFunction(this.id)"></button>
-<button class="button" id="2" onkeypress="myFunction(this.id)"></button>
-<button class="button" id="3" onkeypress="myFunction(this.id)"></button><br>
-<button class="button" id="4" onkeypress="myFunction(this.id)"></button>
-<button class="button" id="5" onkeypress="myFunction(this.id)"></button>
-<button class="button" id="6" onkeypress="myFunction(this.id)"></button><br>
-<button class="button" id="7" onkeypress="myFunction(this.id)"></button>
-<button class="button" id="8" onkeypress="myFunction(this.id)"></button>
-<button class="button" id="9" onkeypress="myFunction(this.id)"></button>
+<button class="button" id="1" onclick="myFunction(this.id)"></button>
+<button class="button" id="2" onclick="myFunction(this.id)"></button>
+<button class="button" id="3" onclick="myFunction(this.id)"></button>
+<button class="button" id="4" onclick="myFunction(this.id)"></button><br>
+<button class="button" id="5" onclick="myFunction(this.id)"></button>
+<button class="button" id="6" onclick="myFunction(this.id)"></button>
+<button class="button" id="7" onclick="myFunction(this.id)"></button>
+<button class="button" id="8" onclick="myFunction(this.id)"></button><br>
+<button class="button" id="9" onclick="myFunction(this.id)"></button>
+<button class="button" id="10" onclick="myFunction(this.id)"></button>
+<button class="button" id="11" onclick="myFunction(this.id)"></button>
+<button class="button" id="12" onclick="myFunction(this.id)"></button><br>
+<button class="button" id="13" onclick="myFunction(this.id)"></button>
+<button class="button" id="14" onclick="myFunction(this.id)"></button>
+<button class="button" id="15" onclick="myFunction(this.id)"></button>
+<button class="button" id="16" onclick="myFunction(this.id)"></button><br>
 <br><br>
 </div> 
 
