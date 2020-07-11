@@ -11,6 +11,8 @@ function startTime() {
   var h = today.getHours();
   var m = today.getMinutes();
   var s = today.getSeconds();
+  var temph = h;
+  var tempm = m + 1;
   var hours = 0;
   var minutes = 0;
   var seconds = 0;
@@ -28,22 +30,86 @@ function startTime() {
   }
   //countdown
   if(m > 30){
-    h = h+1;
+    temph = temph+1;
   }
+
   var timeNum = parseInt(h.toString() + m.toString());
   if(timeNum<=1430 && timeNum>=730){
-    hours = 14-h;
+    hours = 14 - temph;
     seconds = 60 - s;
-    if(m<59&&m<31){
-      minutes = 90 - m;
+    if(m<=60&&m>=31){
+      minutes = 90 - tempm;
     } else{
-      minutes = 30 - m;
+      minutes = 30 - tempm;
     }
   }
-  
-    if(seconds = 60){
-    seconds = "00";
+  if(timeNum<=1630 && timeNum>=1430){
+    hours = 16 - temph;
+    seconds = 60 - s;
+    if(m<=60&&m>=31){
+      minutes = 90 - tempm;
+    } else{
+      minutes = 30 - tempm;
+    }
   }
+  if(timeNum<=1830 && timeNum>=1630){
+    hours = 18 - temph;
+    seconds = 60 - s;
+    if(m<=60&&m>=31){
+      minutes = 90 - tempm;
+    } else{
+      minutes = 30 - tempm;
+    }
+  }
+  if(timeNum<=2030 && timeNum>=1830){
+    hours = 20 - temph;
+    seconds = 60 - s;
+    if(m<=60&&m>=31){
+      minutes = 90 - tempm;
+    } else{
+      minutes = 30 - tempm;
+    }
+  }
+  if(timeNum<=2230 && timeNum>=2030){
+    hours = 22 - temph;
+    seconds = 60 - s;
+    if(m<=60&&m>=31){
+      minutes = 90 - tempm;
+    } else{
+      minutes = 30 - tempm;
+    }
+  }
+  if(timeNum>2230){
+    hours = 31 - temph;
+    seconds = 60 - s;
+    if(m<=60&&m>=31){
+      minutes = 90 - tempm;
+    } else{
+      minutes = 30 - tempm;
+    }
+  }
+  if(timeNum<730){
+    hours = 7 - temph;
+    seconds = 60 - s;
+    if(m<=60&&m>=31){
+      minutes = 90 - tempm;
+    } else{
+      minutes = 30 - tempm;
+    }
+  }
+  if(seconds==60){
+     seconds = 0;
+  }
+  if(seconds<10){
+     seconds = "0" + seconds;
+  }
+  if(minutes<10){
+     minutes = "0" + minutes;
+  }
+  if(hours<10){
+     hours = "0" + hours;
+  }
+    
   document.getElementById('time').innerHTML = hours + ":" + minutes + ":" + seconds;  
   
 }
