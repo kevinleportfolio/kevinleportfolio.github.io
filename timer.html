@@ -11,6 +11,7 @@ function startTime() {
   var h = today.getHours();
   var m = today.getMinutes();
   var s = today.getSeconds();
+  var hours = 0;
   var minutes = 60 - m;
   var seconds = 60 - s;
   m = checkTime(m);
@@ -35,7 +36,8 @@ function startTime() {
   }
   if(h<=14&&m<=30){
     if(h>=7&&m>=30){
-      document.getElementById('time').innerHTML = 14-h + ":" + minutes-m + ":" + seconds-s;
+      hours = 14;
+      document.getElementById('time').innerHTML = hours-h + ":" + minutes-m + ":" + seconds-s;
     }    
   }
   
