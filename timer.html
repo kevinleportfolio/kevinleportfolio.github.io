@@ -36,8 +36,8 @@ function startTime() {
   }
   if(h<=14&&m<=30){
     if(h>=7&&m>=30){
-      hours = 14;
-      document.getElementById('time').innerHTML = hours-h + ":" + minutes-m + ":" + seconds-s;
+      hours = 14-h;
+      document.getElementById('time').innerHTML = hours + ":" + minutes + ":" + seconds;
     }    
   }
   
@@ -63,7 +63,7 @@ function clearText(){
   
   <br><br><br><br>
   
-  <input type="text" id="mytext" placeholder="uTube link here"> <button id="myBtn" onclick="clearText();">sendits</button>
+  <input type="text" id="mytext" placeholder="uTube link here"> <button id="myBtn" onclick="clearText();">sendit</button>
 
 
 </body>
