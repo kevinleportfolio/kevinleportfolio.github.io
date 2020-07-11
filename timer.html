@@ -41,6 +41,9 @@ function startTime() {
     }
   }
   
+    if(seconds = 60){
+    seconds = "00";
+  }
   document.getElementById('time').innerHTML = hours + ":" + minutes + ":" + seconds;  
   
 }
@@ -63,7 +66,7 @@ function clearText(){
   
   <br><br><br><br>
   
-  <input type="text" id="mytext" placeholder="uTube link here"> <button id="myBtn" onclick="clearText();">sendit</button>
+  <input type="text" id="mytext" placeholder="uTube link here"> <button id="myBtn" onclick="clearText();">senydit</button>
 
 
 </body>
