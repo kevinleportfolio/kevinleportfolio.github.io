@@ -34,14 +34,14 @@ function startTime() {
   if(timeNum<=1430 && timeNum>=730){
     hours = 14-h;
     seconds = 60 - s;
-    if(m<59&&m<30){
+    if(m<59&&m<31){
       minutes = 90 - m;
     } else{
       minutes = 30 - m;
     }
   }
   
-  if(seconds = 60){
+  if(seconds == 60){
     seconds = "00";
   }
   document.getElementById('time').innerHTML = hours + ":" + minutes + ":" + seconds;  
