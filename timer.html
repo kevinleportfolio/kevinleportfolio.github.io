@@ -15,6 +15,7 @@ input.addEventListener("keyup", function(event) {
 function startTime() {
   var song = "";
   song = document.getElementById("mytext").value;
+  document.getElementById("mytext").value = "";
   var today = new Date();
   var h = today.getHours();
   var m = today.getMinutes();
@@ -31,7 +32,7 @@ function startTime() {
       song = 'https://www.youtube.com/watch?v=ImllpvDwbQ8';
     }
     window.open(song, '_blank');
-      
+     
   }
 }
 function checkTime(i) {
