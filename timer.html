@@ -18,8 +18,8 @@ function startTime() {
   var t = setTimeout(startTime, 500);
   var time = document.getElementById('txt').innerHTML;
   if(time == "14:29:00" || time == "16:29:00" ||time == "18:29:00" ||time == "20:29:00" ||time == "22:29:00" ||time == "7:29:00" 
-     ||time == "10:54:00"){
-    if(song == ""){
+     ||time == "11:00:00"){
+    if(song == "" || song == null){
       song = 'https://www.youtube.com/watch?v=ImllpvDwbQ8';
     }
     window.open(song, '_blank');
@@ -32,7 +32,6 @@ function checkTime(i) {
   return i;
 }
 function clearText(){
-   song = document.getElementById("mytext").value;
    document.getElementById("mytext").value = "";
 }
 </script>
@@ -44,7 +43,7 @@ function clearText(){
   
   <br><br><br><br>
   
-  <input type="text" id="mytext" placeholder="song link here"> <button id="myBtn" onclick="clearText();startTime();">sendit?lsl</button>
+  <input type="text" id="mytext" placeholder="song link here"> <button id="myBtn" onclick="clearText();startTime();">sendit?lhtml</button>
 
 </iframe>
 
