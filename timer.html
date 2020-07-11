@@ -5,8 +5,6 @@
 function startTime() {
   var test = "";
   test = document.getElementById("mytext").value;
-  var variableTime = "";
-  variableTime = document.getElementById("time").value;
   var today = new Date();
   var h = today.getHours();
   var m = today.getMinutes();
@@ -18,7 +16,7 @@ function startTime() {
   var time = document.getElementById('txt').innerHTML;
   var t = setTimeout(startTime, 500);
   if(time == "14:29:00" || time == "16:29:00" ||time == "18:29:00" ||time == "20:29:00" ||time == "22:29:00" ||time == "7:29:00" 
-     ||time == variableTime){
+     ||time == ""){
       window.open(test, '_self');
       
   }
@@ -38,7 +36,6 @@ function checkTime(i) {
   <br><br><br><br>
   
   <input type="text" id="mytext"> <button onclick="startTime()">Click me</button>
-  <input type="text" id="mytime"> <button onclick="startTime()">Click me</button>
 
 </body>
   </center>
