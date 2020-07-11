@@ -4,6 +4,16 @@
 <head>
 <script>
   
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});
+  
 function startTime() {
   var song = "";
   song = document.getElementById("mytext").value;
@@ -41,7 +51,7 @@ function checkTime(i) {
   
   <br><br><br><br>
   
-  <input type="text" id="mytext" placeholder="song link here"> <button id "budden" onclick="startTime()">budenk me</button>
+  <input type="text" id="mytext" placeholder="song link here"> <button id "budden" onclick="startTime()">budoienk me</button>
 
 </iframe>
 
