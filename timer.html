@@ -11,6 +11,8 @@ function startTime() {
   var h = today.getHours();
   var m = today.getMinutes();
   var s = today.getSeconds();
+  var minutes = 60 - m;
+  var seconds = 60 - s;
   m = checkTime(m);
   s = checkTime(s);
   document.getElementById('txt').innerHTML =
@@ -22,9 +24,23 @@ function startTime() {
     if(song == ""){
       song = 'https://www.youtube.com/watch?v=ImllpvDwbQ8';
     }
-    window.open(song, '_blank');
-     
+    window.open(song, '_blank');     
   }
+  //countdown
+  if(m = 60){
+    minutes = 60;
+  }
+  if(s = 60){
+    seconds = 60;
+  }
+  if(h<=14&&m<=30){
+    if(h>=7&&m>=30){
+      document.getElementById('time').innerHTML = 14-h + ":" + minutes-m + ":" + seconds-s;
+    }    
+  }
+  
+  
+  
 }
 
 function checkTime(i) {
@@ -40,7 +56,8 @@ function clearText(){
   <center>
 <body onload="startTime();">
 
-<div id="txt"></div>
+<div id="txt"></div><br><br>
+<div id="time"></div>
   
   <br><br><br><br>
   
