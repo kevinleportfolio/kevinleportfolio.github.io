@@ -3,11 +3,19 @@
   <title> timer </title>
 <head>
 <script>
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});
   
 function startTime() {
   var song = "";
   song = document.getElementById("mytext").value;
-  document.getElementById("mytext").value = "";
   var today = new Date();
   var h = today.getHours();
   var m = today.getMinutes();
@@ -27,9 +35,13 @@ function startTime() {
      
   }
 }
+
 function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
+}
+function clear(){
+   document.getElementById("mytext").value = "";
 }
 </script>
 </head>
@@ -41,7 +53,7 @@ function checkTime(i) {
   
   <br><br><br><br>
   
-  <input type="text" id="mytext" placeholder="song link here"> <button onclick="startTime()">zzzk me</button>
+  <input type="text" id="mytext" placeholder="song link here"> <button id="myBtn" onclick="startTime(), clear()">zyumm me</button>
 
 </iframe>
 
