@@ -12,8 +12,8 @@ function startTime() {
   var m = today.getMinutes();
   var s = today.getSeconds();
   var hours = 0;
-  var minutes = 60 - m;
-  var seconds = 60 - s;
+  var minutes = 0;
+  var seconds = 0;
   m = checkTime(m);
   s = checkTime(s);
   document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
@@ -27,16 +27,23 @@ function startTime() {
     window.open(song, '_blank');     
   }
   //countdown
-  if(minutes = 60){
-    minutes = "00";
+  if(m > 30){
+    h = h+1;
   }
+  var timeNum = parseInt(h.toString() + m.toString());
+  if(timeNum<=1430 && timeNum>=730){
+    hours = 14-h;
+    seconds = 60 - s;
+    if(m<59&&m<30){
+      minutes = 90 - m;
+    } else{
+      minutes = 30 - m;
+    }
+  }
+  
   if(seconds = 60){
     seconds = "00";
   }
-  
-  hours = parseInt(h.toString() + m.toString());
-  hours = hours - 5;
-  
   document.getElementById('time').innerHTML = hours + ":" + minutes + ":" + seconds;  
   
 }
