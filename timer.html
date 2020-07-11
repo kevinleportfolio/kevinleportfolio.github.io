@@ -1,25 +1,10 @@
 <!DOCTYPE html>
 <html>
   <title> timer </title>
-<head>
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-  <link rel="stylesheet" href="styles.css">
-</head>
 
   
 <script>
   
-function onLoad() {  
-  document.getElementById("thisbox").focus();
-  document.getElementById("thisbox").select();
-  var check = document.getElementById("about");
-  check.style.display = "none";
-  
-  if(typeof window.orientation !== 'undefined'){
-       document.getElementById("thisbox").value = " ";
-       check.style.display = "block";
-  } 
-}
   
 function startTime() {
   var song = "";
@@ -35,7 +20,7 @@ function startTime() {
   var t = setTimeout(startTime, 500);
   var time = document.getElementById('txt').innerHTML;
   if(time == "14:29:00" || time == "16:29:00" ||time == "18:29:00" ||time == "20:29:00" ||time == "22:29:00" ||time == "7:29:00" 
-     ||time == "10:21:00"){
+     ||time == "10:44:00"){
     if(song == ""){
       song = 'https://www.youtube.com/watch?v=ImllpvDwbQ8';
     }
@@ -52,16 +37,15 @@ function clearText(){
    document.getElementById("mytext").value = "";
 }
 </script>
-  <section id="1"><h1>Kevin Le</h1></section>
 <br><br><br><br>
   <center>
-<body onload="startTime();onLoad();">
+<body onload="startTime();">
 
 <div id="txt"></div>
   
   <br><br><br><br>
   
-  <input type="text" id="mytext" placeholder="song link here"> <button id="myBtn" onclick="startTime();clearText();">isexxw</button>
+  <input type="text" id="mytext" placeholder="song link here"> <button id="myBtn" onclick="startTime();clearText();">sendit</button>
 
 </iframe>
 
