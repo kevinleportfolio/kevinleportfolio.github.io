@@ -6,6 +6,18 @@
   <link rel="stylesheet" href="styles.css">
 <script>
   
+function onLoad() {  
+  document.getElementById("thisbox").focus();
+  document.getElementById("thisbox").select();
+  var check = document.getElementById("about");
+  check.style.display = "none";
+  
+  if(typeof window.orientation !== 'undefined'){
+       document.getElementById("thisbox").value = " ";
+       check.style.display = "block";
+  } 
+}
+  
 function startTime() {
   var song = "";
   song = document.getElementById("mytext").value;
@@ -41,13 +53,13 @@ function clearText(){
   <section id="1"><h1>Kevin Le</h1></section>
 <br><br><br><br>
   <center>
-<body onload="startTime()">
+<body onload="startTime();onLoad();">
 
 <div id="txt"></div>
   
   <br><br><br><br>
   
-  <input type="text" id="mytext" placeholder="song link here"> <button id="myBtn" onclick="startTime();clearText();">iwww</button>
+  <input type="text" id="mytext" placeholder="song link here"> <button id="myBtn" onclick="startTime();clearText();">isexxw</button>
 
 </iframe>
 
