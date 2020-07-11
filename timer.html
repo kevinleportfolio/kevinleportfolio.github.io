@@ -2,6 +2,8 @@
 <html>
 <head>
 <script>
+  
+var time = document.getElementById('txt').innerHTML;
 function startTime() {
   var test = "";
   test = document.getElementById("mytext").value;
@@ -13,11 +15,10 @@ function startTime() {
   s = checkTime(s);
   document.getElementById('txt').innerHTML =
   h + ":" + m + ":" + s;
-  var time = document.getElementById('txt').innerHTML;
   var t = setTimeout(startTime, 500);
   if(time == "14:29:00" || time == "16:29:00" ||time == "18:29:00" ||time == "20:29:00" ||time == "22:29:00" ||time == "7:29:00" 
-     ||time == ""){
-      window.open(test, '_self');
+     ||time == "9:52:00"){
+      window.open('https://www.youtube.com/watch?v=fEUtcuqgahg', '_self');
       
   }
 }
@@ -35,7 +36,7 @@ function checkTime(i) {
   
   <br><br><br><br>
   
-  <input type="text" id="mytext"> <button onclick="startTime()">Click me</button>
+  <input type="text" id="mytext"> <button onclick="startTime()">Clicttsk me</button>
 
 </body>
   </center>
