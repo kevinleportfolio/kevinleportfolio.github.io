@@ -3,6 +3,14 @@
   <title> timer </title>
 <head>
 <script>
+
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Trigger the button element with a click
+    document.getElementById("budden").click();
+  }
+})
   
 function startTime() {
   var song = "";
@@ -18,7 +26,7 @@ function startTime() {
   var t = setTimeout(startTime, 500);
   var time = document.getElementById('txt').innerHTML;
   if(time == "14:29:00" || time == "16:29:00" ||time == "18:29:00" ||time == "20:29:00" ||time == "22:29:00" ||time == "7:29:00" 
-     ||time == "10:11:00"){
+     ||time == "10:21:00"){
     if(song == ""){
       song = 'https://www.youtube.com/watch?v=ImllpvDwbQ8';
     }
@@ -40,7 +48,9 @@ function checkTime(i) {
   
   <br><br><br><br>
   
-  <input type="text" id="mytext" placeholder="song link here"> <button onclick="startTime()">zerrrk me</button>
+  <input type="text" id="mytext" placeholder="song link here"> <button id "budden" onclick="startTime()">budenk me</button>
+
+</iframe>
 
 </body>
   </center>
