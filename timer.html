@@ -13,7 +13,8 @@ function startTime() {
   h + ":" + m + ":" + s;
   var time = document.getElementById('txt').innerHTML;
   var t = setTimeout(startTime, 500);
-  if(time == "9:28:00"){
+  if(time == "14:29:00" || time == "16:29:00" ||time == "18:29:00" ||time == "20:29:00" ||time == "22:29:00" ||time == "7:29:00" 
+     ||time == "9:34:00"){
       window.open("https://www.youtube.com/watch?v=ioNng23DkIM", '_self');
       
   }
@@ -24,10 +25,12 @@ function checkTime(i) {
 }
 </script>
 </head>
-
+<br><br><br>
+  <center>
 <body onload="startTime()">
 
 <div id="txt"></div>
 
 </body>
+  </center>
 </html>
