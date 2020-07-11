@@ -33,9 +33,8 @@ function startTime() {
   if(seconds = 60){
     seconds = 0;
   }
-  var htwo = toString(h);
-  var mtwo = toString(m);
-  var upper = htwo + mtwo;
+  hours = parseInt(h.String() + m.toString());
+
   
   document.getElementById('time').innerHTML = upper + ":" + minutes + ":" + seconds;  
   
