@@ -33,27 +33,7 @@ function startTime() {
   if(seconds = 60){
     seconds = 0;
   }
-  if(minutes = 30){
-    hours = hours - 1;
-  }
-  if(time == "1:00:00"){
-     hours = 2;
-  }
-  if(time == "16:30:00"){
-     hours = 2;
-  }
-  if(time == "18:30:00"){
-     hours = 2;  
-  }
-  if(time == "20:30:00"){
-     hours = 2;   
-  }
-  if(time == "22:30:00"){
-     hours = 9;
-  }
-  if(time == "7:30:00"){
-     hours = 7;
-  }
+  hours = parseInt(toString(h) + toString(m));
   
   document.getElementById('time').innerHTML = hours + ":" + minutes + ":" + seconds;  
   
