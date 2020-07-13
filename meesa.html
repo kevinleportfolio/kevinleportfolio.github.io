@@ -77,7 +77,7 @@ console.log(medsGiven);
 }
 
 function sendMail() {
-    var link = "mailto:test36@yahoo.com"
+    var link = "mailto:" + document.getElementById('email').value;
              + "?cc="
              + "&subject=" + escape(date + " meesa medicine")
              + "&body=" + escape(document.getElementById('myText').value)
@@ -102,6 +102,7 @@ buprenorphine (0.3ml)<br>
 tylan powder (pinch)
 <br>- - - - - - - - -<br>
   <br><input type="submit" value="verify" onclick="clearText();"><br><br>
+  <input type="text" id="email" placeholder="email address"><br>
   <textarea id="myText">
    
 </textarea><br>
