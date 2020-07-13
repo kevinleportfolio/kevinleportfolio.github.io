@@ -78,6 +78,7 @@ console.log(medsGiven);
 
 function sendMail() {
     var link = "mailto:test36@yahoo.com"
+             + "?cc="
              + "&subject=" + escape(date + " meesa medicine")
              + "&body=" + escape(document.getElementById('myText').value)
     ;
