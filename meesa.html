@@ -24,21 +24,64 @@
    text-align: center; 
 }</Style>
 <script>
-alert("type name of med to verify");
+//alert("type 'check' to verify");
 
 function clearText(){
-
+  var number = 1;
+  var error = "";
+  var meds = "";
   var medsGiven = [];
   var notGiven = [];
-if(document.getElementById("med1").value == "cerenia"){
-    medsGiven.push(document.getElementById("med1").value);
+if(document.getElementById("med1").value == "check"){
+    medsGiven.push(document.getElementById("med1").placeholder);
 } else{
-    alert("didn't give CERENIA, check again.");
+    notGiven.push(document.getElementById("med1").placeholder);
+}
+if(document.getElementById("med2").value == "check"){
+    medsGiven.push(document.getElementById("med2").placeholder);
+} else{
+    notGiven.push(document.getElementById("med2").placeholder);
+}
+if(document.getElementById("med3").value == "check"){
+    medsGiven.push(document.getElementById("med3").placeholder);
+} else{
+    notGiven.push(document.getElementById("med3").placeholder);
+}
+if(document.getElementById("med4").value == "check"){
+    medsGiven.push(document.getElementById("med4").placeholder);
+} else{
+    notGiven.push(document.getElementById("med4").placeholder);
 }
 
-console.log(medsGiven);
-console.log(notGiven);
+for(var counter = 0; counter < notGiven.length; counter++ ){
+       error =  error + number.toString() + ". " + notGiven[counter] + " ";
+       number++;
+}https://jsfiddle.net/#run
+number = 1;
+for(var counter = 0; counter < medsGiven.length; counter++ ){
+       meds =  meds + number.toString() + ". " + medsGiven[counter] + "\n";
+       number++;
+}
+if(error == ""){
+   error = "all done!";
+} else{
+   error = "still need to give: " + error;
+}
+var today = new Date(); 
+var date = (today.getMonth()+1)+'-'+today.getDate() + '-'+ today.getFullYear();
 
+document.getElementById("myText").value = date + "\n- - - -\n" + meds;
+alert(error);
+console.log(medsGiven);
+
+}
+
+function sendMail() {
+    var link = "mailto:tracyle36@yahoo.com"
+             + "&subject=" + escape(date + " meesa medicine")
+             + "&body=" + escape(document.getElementById('myText').value);
+
+    window.location.href = link;
 }
 
 </script>
@@ -46,15 +89,21 @@ console.log(notGiven);
 <body>
   <center><br><b>
   morning</b><br>- - - - - - - - -<br>
-  <input type="text" id="med1" placeholder="cerenia (test)"><br>
-  <input type="text" id="med2" placeholder="cerenia"><br>
-  <input type="text" id="med3" placeholder="cerenia"><br>
-  <input type="text" id="med4" placeholder="cerenia"><br>
+  <input type="text" id="med1" placeholder="cerenia (half tab)"><br>
+  <input type="text" id="med2" placeholder="sucralfate (half tab)"><br>
+  <input type="text" id="med3" placeholder="buprenorphine (0.3ml)"><br>
+  <input type="text" id="med4" placeholder="tylan powder (pinch)"><br>
 
- <br>- - - - - - - - -<br><b>night</b>
-
+<br><b>night</b> <br>- - - - - - - - -<br>
+sucralfate (half tab)<br>
+buprenorphine (0.3ml)<br>
+tylan powder (pinch)<br>
   
-  <br><br><input type="submit" value="Submit" onclick="clearText();">
+  <br><input type="submit" value="verify" onclick="clearText();"><br><br>
+  <textarea id="myText">
+   
+</textarea><br>
+<button onclick="sendMail(); return false">Send</button>
   </center>
 </body>
 </html>
