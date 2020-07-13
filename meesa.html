@@ -1,28 +1,60 @@
 <!DOCTYPE html>
 <html>
-  <title> timer </title>
-
+  <title> meesa's meds </title>
+<header><center>
+  <h1>
+  meesa's meds
+  </h1>
+</center></header>
   
+<Style>
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;  
+}
+
+:-ms-input-placeholder {  
+   text-align: center; 
+}</Style>
 <script>
-  var arr = [
-  ""
-];
-  arr.push("Hola");
-console.log(arr);
+alert("type name of med to verify");
+
+function clearText(){
+
+  var medsGiven = [];
+  var notGiven = [];
+if(document.getElementById("med1").value == "cerenia"){
+    medsGiven.push(document.getElementById("med1").value);
+} else{
+    alert("didn't give CERENIA, check again.");
+}
+
+console.log(medsGiven);
+console.log(notGiven);
+
+}
 
 </script>
 
 <body>
-  <center>
-<form action="/action_page.php">
-  <input type="checkbox" id="med1" name="vehicle1" value="med1">
-  <label for="vehicle1"> medicine1</label><br>
-  <input type="checkbox" id="med2" name="vehicle2" value="med2">
-  <label for="vehicle2"> medicine2</label><br>
-  <input type="checkbox" id="med3" name="vehicle3" value="med3">
-  <label for="vehicle3"> medicine3</label><br><br>
-  <input type="submit" value="Submit">
-</form>
+  <center><br><b>
+  morning</b><br>- - - - - - - - -<br>
+  <input type="text" id="med1" placeholder="cerenia (test)"><br>
+  <input type="text" id="med2" placeholder="cerenia"><br>
+  <input type="text" id="med3" placeholder="cerenia"><br>
+  <input type="text" id="med4" placeholder="cerenia"><br>
+
+ <br>- - - - - - - - -<br><b>night</b>
+
+  
+  <br><br><input type="submit" value="Submit" onclick="clearText();">
   </center>
 </body>
 </html>
