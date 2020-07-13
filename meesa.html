@@ -77,7 +77,7 @@ console.log(medsGiven);
 }
 
 function sendMail() {
-    var link = "mailto:" + document.getElementById('email').value;
+    var link = "mailto:" + document.getElementById('email').value
              + "?cc="
              + "&subject=" + escape(date + " meesa medicine")
              + "&body=" + escape(document.getElementById('myText').value)
