@@ -24,7 +24,9 @@
    text-align: center; 
 }</Style>
 <script>
-//alert("type 'check' to verify");
+var today = new Date(); 
+var date = (today.getMonth()+1)+'-'+today.getDate() + '-'+ today.getFullYear();
+alert("type 'check' to verify");
 
 function clearText(){
   var number = 1;
@@ -67,8 +69,6 @@ if(error == ""){
 } else{
    error = "still need to give: " + error;
 }
-var today = new Date(); 
-var date = (today.getMonth()+1)+'-'+today.getDate() + '-'+ today.getFullYear();
 
 document.getElementById("myText").value = date + "\n- - - -\n" + meds;
 alert(error);
@@ -77,9 +77,11 @@ console.log(medsGiven);
 }
 
 function sendMail() {
-    var link = "mailto:tracyle36@yahoo.com"
+    var link = "mailto:test36@yahoo.com"
+             + "?cc=myCCaddress@example.com"
              + "&subject=" + escape(date + " meesa medicine")
-             + "&body=" + escape(document.getElementById('myText').value);
+             + "&body=" + escape(document.getElementById('myText').value)
+    ;
 
     window.location.href = link;
 }
