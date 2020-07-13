@@ -56,7 +56,7 @@ if(document.getElementById("med4").value == "check"){
 }
 
 for(var counter = 0; counter < notGiven.length; counter++ ){
-       error =  error + number.toString() + ". " + notGiven[counter] + " ";
+       error =  error + number.toString() + ". " + notGiven[counter] + "\n";
        number++;
 }https://jsfiddle.net/#run
 number = 1;
@@ -67,7 +67,7 @@ for(var counter = 0; counter < medsGiven.length; counter++ ){
 if(error == ""){
    error = "all done!";
 } else{
-   error = "still need to give: " + error;
+   error = "still need to give:\n" + error;
 }
 
 document.getElementById("myText").value = date + "\n- - - -\nGAVE ALREADY\n- - - -\n" + meds + "\n- - - -\nGIVE AT NIGHT\n- - - -\n1. sucralfate (half tab)\n2. buprenorphine (0.3ml)\n3. tylan powder (pinch)";
