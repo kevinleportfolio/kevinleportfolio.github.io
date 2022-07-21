@@ -22,7 +22,6 @@
   
 <form>
   <input type="text" id="time" placeholder="time" onkeyup="formChanged()" onchange="formChanged()"><br><br>
-  <input type="text" id="flax" placeholder="flax" onkeyup="formChanged()" onchange="formChanged()"><br><br>
   <input type="text" id="cotton" placeholder="cotton" onkeyup="formChanged()" onchange="formChanged()"><br><br>
   <input type="text" id="earth" placeholder="earth" onkeyup="formChanged()" onchange="formChanged()"><br><br>
   <input type="text" id="bsp" placeholder="bsp" onkeyup="formChanged()" onchange="formChanged()"><br><br>
@@ -39,12 +38,11 @@
   
 function formChanged() {
     var time = document.getElementById("time").value * 10;
-    var flax = document.getElementById("flax").value * 10;
     var cotton = document.getElementById("cotton").value * 9;
     var earth = document.getElementById("earth").value * 10;
     var bsp = document.getElementById("bsp").value * 15;
  
-    document.getElementById("p1").innerHTML = (time+flax+bsp);
+    document.getElementById("p1").innerHTML = (time+bsp)+102000;
     document.getElementById("p2").innerHTML = (cotton+earth+bsp);
   
 }
