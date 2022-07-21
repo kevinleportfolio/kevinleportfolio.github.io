@@ -30,9 +30,8 @@
   <button type='button' onclick="formChanged()">submit</button> 
 </form> 
   
-  <p>fisher</p>
+
   <p id="p1"></p>
-  <p>cook</p>
   <p id="p2"></p>
 
 
@@ -48,8 +47,8 @@ function formChanged() {
  
     var fisher = (document.getElementById("fisher").value * 0.85) - ((time+bsp)+102000);
     var cook = (document.getElementById("cook").value * 0.85) - ((cotton+earth+bsp));
-    document.getElementById("p1").innerHTML = fisher.toLocaleString();
-    document.getElementById("p2").innerHTML = cook.toLocaleString();  
+    document.getElementById("p1").innerHTML = "fisher" + fisher.toLocaleString();
+    document.getElementById("p2").innerHTML = "cook" + cook.toLocaleString();  
 }
     
     
