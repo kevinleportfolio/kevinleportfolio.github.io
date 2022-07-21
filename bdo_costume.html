@@ -47,9 +47,9 @@ function formChanged() {
     var bsp = document.getElementById("bsp").value * 15;
  
     var fisher = (document.getElementById("fisher").value * 0.85) - ((time+bsp)+102000);
+    var cook = (document.getElementById("cook").value * 0.85) - ((cotton+earth+bsp));
     document.getElementById("p1").innerHTML = fisher.toLocaleString();
-    document.getElementById("p2").innerHTML = (document.getElementById("cook").value * 0.85) - ((cotton+earth+bsp));
-  
+    document.getElementById("p2").innerHTML = cook.toLocaleString();  
 }
     
     
