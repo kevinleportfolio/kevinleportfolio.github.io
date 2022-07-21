@@ -45,7 +45,8 @@ function formChanged() {
     var earth = document.getElementById("earth").value * 10;
     var bsp = document.getElementById("bsp").value * 15;
  
-    document.getElementById("p1").innerHTML = (document.getElementById("fisher").value * 0.85) - ((time+bsp)+102000);
+    var fisher = (document.getElementById("fisher").value * 0.85) - ((time+bsp)+102000);
+    document.getElementById("p1").innerHTML = fisher.toLocaleString();
     document.getElementById("p2").innerHTML = (document.getElementById("cook").value * 0.85) - ((cotton+earth+bsp));
   
 }
