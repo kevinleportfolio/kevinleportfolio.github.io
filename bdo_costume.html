@@ -21,20 +21,30 @@
   </div>
   
 <form action="/action_page.php">
-  <input type="text" id="time" name="fname" value="time"><br>
-  <input type="text" id="flax" name="lname" value="flax"><br><br>
-  <input type="text" id="cotton" name="lname" value="cotton"><br><br>
-  <input type="text" id="earth" name="lname" value="earth"><br><br>
-  <input type="text" id="bsp" name="lname" value="bsp"><br><br>
+  <input type="text" id="time" value="time" onkeyup="formChanged()" onchange="formChanged()"><br><br>
+  <input type="text" id="flax" value="flax"><br><br>
+  <input type="text" id="cotton" value="cotton"><br><br>
+  <input type="text" id="earth" value="earth"><br><br>
+  <input type="text" id="bsp" value="bsp"><br><br>
   <input type="submit" value="Submit">
 </form> 
+  
+  <p id="p1">Hello World!</p>
 
 
 
 </center>
   
 <script>
-document.getElementById("demo").innerHTML = "My First JavaScript";
+  
+function formChanged() {
+    var firstName = document.getElementsById("time")[0].value;
+ 
+    document.getElementById("p1").innerHTML = firstName;
+}
+    
+    
+    
 </script>
   
   
